@@ -1,0 +1,11 @@
+body{
+    background-color: #212121;
+   
+}
+
+#gameCanvas{    
+    height: 100%;
+    width: 100%;
+    background: url('https://marclopezavila.github.io/planet-defense-game/img/space.jpg');
+    cursor: url('https://marclopezavila.github.io/planet-defense-game/img/aim_red.png') 17.5 17.5,auto !important;
+}
