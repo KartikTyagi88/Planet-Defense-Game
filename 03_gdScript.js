@@ -74,11 +74,6 @@ const canvas = document.getElementById('gameCanvas')
                const distanceToPlanet = Math.hypot(a.x-planet.x, a.y - planet.y);
                if(distanceToPlanet < planet.radius + a.alienRadius){
                 gameOver = true;
-                // alert(`Game Over! Your FINAL SCORE IS ${score}`);
-                //Display Final score:
-                context.fillStyle = "#fff";
-                context.font = "40px Arial";
-                context.fillText(`GAME OVER! YOUR FINAL SCORE IS: ${score}`, cW/4, (2*cH)/3);
                }
 
                //Checking collision with projectiles:
@@ -96,6 +91,13 @@ const canvas = document.getElementById('gameCanvas')
                 aliens.splice(i,1)
                }
             });
+
+            if(gameOver){
+              //Display Final score:
+              context.fillStyle = "#fff";
+              context.font = "40px Arial";
+              context.fillText(`GAME OVER! YOUR FINAL SCORE IS: ${score}`, cW/4, (2*cH)/3);
+            }
 
             //Display score:
             context.fillStyle = "#fff";
