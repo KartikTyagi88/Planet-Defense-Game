@@ -3,6 +3,10 @@ const canvas = document.getElementById('gameCanvas')
         let cH = context.canvas.height = window.innerHeight;
         let cW = context.canvas.width = window.innerWidth;
 
+        document.querySelector('#restart').addEventListener('click', function(e){
+          gameRestart();
+        })
+
       function gameRestart(){
         let planet = {
           x: cW/2,
@@ -98,7 +102,7 @@ const canvas = document.getElementById('gameCanvas')
           context.font = "20px Arial";
           context.fillText(`Score: ${score}`, 10, 30);
 
-          requestAnimationFrame(gameLoop);
+         requestAnimationFrame(gameLoop);
 
           if(gameOver){
             //Display Final score:
@@ -106,10 +110,6 @@ const canvas = document.getElementById('gameCanvas')
             context.font = "40px Arial";
             context.fillText(`GAME OVER! YOUR FINAL SCORE IS: ${score}`, cW/4, (2*cH)/3);
             context.fillText(`Click on restart to start again`, cW/3, (5*cH)/6);
-
-            document.querySelector('#restart').addEventListener('click', function(e){
-              gameRestart();
-            })
           }
       }
 
